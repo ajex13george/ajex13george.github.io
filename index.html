@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajex B George - Hacker Pirate Portfolio</title>
+  <title>Ajex B George - Ghost Hacker Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="matrix"></canvas>
+  <!-- Fog Background -->
+  <div class="fog"></div>
+  <div class="fog"></div>
 
   <header class="hero">
     <h1>☠️ Ajex B George</h1>
-    <p>"Sailing through the seas of cybersecurity and storms of hacking"</p>
+    <p>Mysterious Cybersecurity Explorer | Ghost Ship of the Digital Seas</p>
   </header>
 
   <main>
     <section class="panel" id="about">
       <h2>About Me</h2>
-      <p>I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) at Offenso Hacker Academy, Calicut. Passionate about penetration testing, networking, and cybersecurity research.</p>
+      <p>
+        I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) at Offenso Hacker Academy, Calicut. 
+        Passionate about penetration testing, networking, and cybersecurity research.  
+        Sailing through storms of data, uncovering hidden vulnerabilities.
+      </p>
     </section>
 
     <section class="panel" id="skills">
@@ -33,7 +39,7 @@
 
     <section class="panel" id="projects">
       <h2>Projects</h2>
-      <p>Coming soon... (more ghostly hacks on the horizon 👻)</p>
+      <p>More ghostly hacks coming soon... 👻</p>
     </section>
 
     <section class="panel" id="contact">
@@ -45,42 +51,13 @@
   </main>
 
   <footer class="panel">
-    <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Portfolio ☠️</p>
+    <p>⚡ © 2025 Ajex B George | Ghost Hacker Portfolio ☠️</p>
   </footer>
 
-  <!-- Ghost Ship -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pirate_ship_icon.png/600px-Pirate_ship_icon.png" 
+  <!-- Ghost Ship Icon -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pirate_ship_icon.png/200px-Pirate_ship_icon.png" 
        alt="Ghost Ship" class="ghost-ship">
-
-  <script>
-    // Matrix Rain (lighter version)
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    const letters = "☠⚓💻01";
-    const fontSize = 20;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(0,255,0,0.5)";
-      ctx.font = fontSize + "px monospace";
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-    setInterval(draw, 70);
-  </script>
 </body>
 </html>
-
 
 
