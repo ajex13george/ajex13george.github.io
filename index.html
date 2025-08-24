@@ -8,6 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="matrix"></canvas>
+
+  <!-- Main Content -->
   <div class="content">
     <header>
       <h1>☠️ Ajex B George</h1>
@@ -32,7 +35,7 @@
     </main>
 
     <footer>
-      <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Pirate Portfolio ☠️</p>
+      <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Portfolio ☠️</p>
     </footer>
   </div>
 
@@ -40,10 +43,7 @@
   <div class="lightning"></div>
 
   <!-- Ghost Ship -->
-  <img src="https://i.ibb.co/9Zf3hC1/ghostship.png" alt="Ghost Ship" class="ghost-ship">
-
-  <!-- Matrix Rain -->
-  <canvas id="matrix"></canvas>
+  <img src="https://i.ibb.co/vw7DpQT/ghost-ship-silhouette.png" alt="Ghost Ship" class="ghost-ship">
 
   <script>
     // Matrix Rain
@@ -52,12 +52,12 @@
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     const letters = "☠⚓💻01";
-    const fontSize = 16;
+    const fontSize = 18; // fewer, larger drops
     const columns = canvas.width / fontSize;
     const drops = Array(Math.floor(columns)).fill(1);
 
     function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.15)"; // darker, less clutter
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#00ff00";
       ctx.font = fontSize + "px monospace";
@@ -70,7 +70,7 @@
         drops[i]++;
       }
     }
-    setInterval(draw, 33);
+    setInterval(draw, 50);
 
     // Lightning Flash
     function flashLightning() {
@@ -78,13 +78,14 @@
       flash.style.opacity = '1';
       setTimeout(() => {
         flash.style.opacity = '0';
-      }, 100);
+      }, 120);
     }
     setInterval(() => {
-      if (Math.random() > 0.7) flashLightning();
-    }, 3000);
+      if (Math.random() > 0.8) flashLightning();
+    }, 4000);
   </script>
 </body>
 </html>
+
 
 
