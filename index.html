@@ -3,71 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajex B George | Cybersecurity Pirate</title>
+  <title>Ajex B George - Hacker Pirate</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Pirate Font -->
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Hero Section -->
-  <header>
-    <div class="container">
-      <h1>☠️ Ahoy! I'm <span>Ajex B George</span></h1>
-      <p>
-        I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) 
-        at Offenso Hacker Academy, Calicut. Passionate about penetration testing, networking, and 
-        cybersecurity research. Sailing the digital seas as a Cybersecurity Pirate ⚓
-      </p>
-      <a href="resume.pdf" class="btn" target="_blank">📄 View My Resume</a>
-    </div>
-  </header>
+  <div class="content">
+    <header>
+      <h1>☠️ Ajex B George</h1>
+      <p>"Sailing through the seas of cybersecurity and storms of hacking"</p>
+    </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Enthusiastic and detail-oriented Cyber Security Researcher with a strong foundation in networking, 
-        ethical hacking, and information security. Currently navigating the waters of penetration testing 
-        and digital defense.
-      </p>
-    </div>
-  </section>
+    <main>
+      <section>
+        <h2>About Me</h2>
+        <p>I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) at Offenso Hacker Academy, Calicut. Passionate about penetration testing, networking, and cybersecurity research.</p>
+      </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2>⚔️ Skills</h2>
-      <ul>
-        <li>🔐 Networking & Security: TCP/IP, Firewalls, IDS</li>
-        <li>🛠 Cybersecurity Tools: Wireshark, Nmap, Metasploit, Burp Suite</li>
-        <li>💻 Operating Systems: Linux, Windows Server</li>
-        <li>⚡ Programming: Python, Bash, SQL</li>
-      </ul>
-    </div>
-  </section>
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li>⚡ Ethical Hacking</li>
+          <li>🌐 Networking</li>
+          <li>💻 Cybersecurity Research</li>
+          <li>☠️ Penetration Testing</li>
+        </ul>
+      </section>
+    </main>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>🏴‍☠️ Projects</h2>
-      <p>⚔️ Projects are coming soon... Currently working on cybersecurity labs and research!</p>
-    </div>
-  </section>
+    <footer>
+      <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Pirate Portfolio ☠️</p>
+    </footer>
+  </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>📬 Contact</h2>
-      <p>📧 <a href="mailto:ajex13george@gmail.com">ajex13george@gmail.com</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/ajex-b-george-881802300" target="_blank">LinkedIn</a></p>
-      <p>💻 <a href="https://github.com/ajex13george" target="_blank">GitHub</a></p>
-    </div>
-  </section>
+  <!-- Lightning Flash -->
+  <div class="lightning"></div>
 
-  <footer>
-    <p>☠️ © 2025 Ajex B George | Securing the Digital Seas ⚓</p>
-  </footer>
+  <!-- Ghost Ship -->
+  <img src="https://i.ibb.co/9Zf3hC1/ghostship.png" alt="Ghost Ship" class="ghost-ship">
+
+  <!-- Matrix Rain -->
+  <canvas id="matrix"></canvas>
+
+  <script>
+    // Matrix Rain
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const letters = "☠⚓💻01";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00ff00";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 33);
+
+    // Lightning Flash
+    function flashLightning() {
+      const flash = document.querySelector('.lightning');
+      flash.style.opacity = '1';
+      setTimeout(() => {
+        flash.style.opacity = '0';
+      }, 100);
+    }
+    setInterval(() => {
+      if (Math.random() > 0.7) flashLightning();
+    }, 3000);
+  </script>
 </body>
 </html>
+
 
