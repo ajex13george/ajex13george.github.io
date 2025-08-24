@@ -1,16 +1,42 @@
+/* General */
 body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #f1f1f1;
-  font-family: 'Pirata One', cursive;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
+/* Fog Layers */
+.fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url("https://i.ibb.co/7VJg5vP/fog-texture.png") repeat;
+  background-size: cover;
+  opacity: 0.15;
+  animation: fogMove 60s linear infinite;
+  z-index: 0;
+}
+
+.fog:nth-child(2) {
+  animation-duration: 120s;
+  opacity: 0.1;
+}
+
+@keyframes fogMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background: rgba(0,0,0,0.7);
   position: relative;
   z-index: 2;
@@ -18,28 +44,40 @@ body {
 
 .hero h1 {
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Panels */
 .panel {
   position: relative;
   z-index: 2;
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   margin: 2rem auto;
   border-radius: 12px;
   max-width: 900px;
+  text-align: center;
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  text-align: center;
+  color: #00ffcc;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  text-align: center;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
 }
 
 a {
@@ -51,27 +89,18 @@ a:hover {
   text-decoration: underline;
 }
 
-#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
+/* Ghost Ship Animation */
 .ghost-ship {
   position: fixed;
   bottom: 20px;
-  left: -300px;
-  width: 180px;
-  opacity: 0.7;
+  left: -200px;
+  width: 150px;
+  opacity: 0.6;
   z-index: 1;
-  animation: sail 60s linear infinite;
+  animation: sail 80s linear infinite;
 }
 
 @keyframes sail {
-  from { left: -300px; }
+  from { left: -200px; }
   to { left: 110%; }
 }
-
-
-
