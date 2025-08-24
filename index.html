@@ -3,63 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajex B George - Hacker Pirate</title>
+  <title>Ajex B George - Hacker Pirate Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 </head>
 <body>
   <canvas id="matrix"></canvas>
 
-  <!-- Main Content -->
-  <div class="content">
-    <header>
-      <h1>☠️ Ajex B George</h1>
-      <p>"Sailing through the seas of cybersecurity and storms of hacking"</p>
-    </header>
+  <header class="hero">
+    <h1>☠️ Ajex B George</h1>
+    <p>"Sailing through the seas of cybersecurity and storms of hacking"</p>
+  </header>
 
-    <main>
-      <section>
-        <h2>About Me</h2>
-        <p>I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) at Offenso Hacker Academy, Calicut. Passionate about penetration testing, networking, and cybersecurity research.</p>
-      </section>
+  <main>
+    <section class="panel" id="about">
+      <h2>About Me</h2>
+      <p>I am a BCA graduate and currently pursuing Advanced Diploma in Information Security (ADIS) at Offenso Hacker Academy, Calicut. Passionate about penetration testing, networking, and cybersecurity research.</p>
+    </section>
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>⚡ Ethical Hacking</li>
-          <li>🌐 Networking</li>
-          <li>💻 Cybersecurity Research</li>
-          <li>☠️ Penetration Testing</li>
-        </ul>
-      </section>
-    </main>
+    <section class="panel" id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>⚡ Ethical Hacking</li>
+        <li>🌐 Networking</li>
+        <li>💻 Cybersecurity Research</li>
+        <li>☠️ Penetration Testing</li>
+      </ul>
+    </section>
 
-    <footer>
-      <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Portfolio ☠️</p>
-    </footer>
-  </div>
+    <section class="panel" id="projects">
+      <h2>Projects</h2>
+      <p>Coming soon... (more ghostly hacks on the horizon 👻)</p>
+    </section>
 
-  <!-- Lightning Flash -->
-  <div class="lightning"></div>
+    <section class="panel" id="contact">
+      <h2>Contact</h2>
+      <p>📧 ajex13george@gmail.com</p>
+      <p>🔗 <a href="https://linkedin.com/in/ajex-b-george-881802300" target="_blank">LinkedIn</a></p>
+      <p>💻 <a href="https://github.com/ajex13george" target="_blank">GitHub</a></p>
+    </section>
+  </main>
+
+  <footer class="panel">
+    <p>⚡ © 2025 Ajex B George | Ghost Ship Hacker Portfolio ☠️</p>
+  </footer>
 
   <!-- Ghost Ship -->
-  <img src="https://i.ibb.co/vw7DpQT/ghost-ship-silhouette.png" alt="Ghost Ship" class="ghost-ship">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pirate_ship_icon.png/600px-Pirate_ship_icon.png" 
+       alt="Ghost Ship" class="ghost-ship">
 
   <script>
-    // Matrix Rain
+    // Matrix Rain (lighter version)
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     const letters = "☠⚓💻01";
-    const fontSize = 18; // fewer, larger drops
+    const fontSize = 20;
     const columns = canvas.width / fontSize;
     const drops = Array(Math.floor(columns)).fill(1);
 
     function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.15)"; // darker, less clutter
+      ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#00ff00";
+      ctx.fillStyle = "rgba(0,255,0,0.5)";
       ctx.font = fontSize + "px monospace";
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
@@ -70,19 +77,7 @@
         drops[i]++;
       }
     }
-    setInterval(draw, 50);
-
-    // Lightning Flash
-    function flashLightning() {
-      const flash = document.querySelector('.lightning');
-      flash.style.opacity = '1';
-      setTimeout(() => {
-        flash.style.opacity = '0';
-      }, 120);
-    }
-    setInterval(() => {
-      if (Math.random() > 0.8) flashLightning();
-    }, 4000);
+    setInterval(draw, 70);
   </script>
 </body>
 </html>
